@@ -17,7 +17,8 @@ var indexRoutes = require("./routes/index.js");
 
 
 // seedDB();
-mongoose.connect("mongodb://localhost/yelp_camp_v6");
+// mongoose.connect("mongodb://localhost/yelp_camp_v6");
+mongoose.connect("mongodb://vai01:online@ds237445.mlab.com:37445/yelpcamp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
