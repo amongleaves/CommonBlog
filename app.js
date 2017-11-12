@@ -15,7 +15,7 @@ var commentRoutes = require("./routes/comments.js");
 var blogRoutes = require("./routes/blogs.js");
 var indexRoutes = require("./routes/index.js");
 
-mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds157185.mlab.com:57185/commonblog");
+mongoose.connect("mongodb://vaidotas75:online@ds157185.mlab.com:57185/commonblog");
 // seedDB();
 // mongoose.connect(process.env.DATABASEURL);
 // mongoose.connect("mongodb://vai01:online@ds237445.mlab.com:37445/commonBlogs");
