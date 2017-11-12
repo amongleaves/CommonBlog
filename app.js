@@ -6,19 +6,19 @@ var flash = require("connect-flash");
 var passport = require("passport");
 var LocalStrategy = require("passport-local")
 var methodOverride = require("method-override");
-var Campground = require("./models/campground.js");
+var Blog = require("./models/blog.js");
 var Comment = require("./models/comment.js");
 var User = require("./models/user.js");
 var seedDB = require("./seeds");
 
 var commentRoutes = require("./routes/comments.js");
-var campgroundRoutes = require("./routes/campgrounds.js");
+var blogRoutes = require("./routes/blogs.js");
 var indexRoutes = require("./routes/index.js");
 
-
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds157185.mlab.com:57185/commonblog");
 // seedDB();
-mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://vai01:online@ds237445.mlab.com:37445/yelpcamp");
+// mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb://vai01:online@ds237445.mlab.com:37445/commonBlogs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
@@ -45,8 +45,12 @@ app.use(function(req, res, next){
 });
 
 app.use(indexRoutes);
-app.use(campgroundRoutes);
+app.use(blogRoutes);
 app.use(commentRoutes);
+
+app.get('*', function(req, res){
+   res.send("Such page doesn't exist.") 
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Server has been started."); 

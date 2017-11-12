@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
 // SCHEMA SETUP
-var campgroundSchema = new mongoose.Schema({
+var blogSchema = new mongoose.Schema({
    name: String,
    price: String,
    image: String,
-   description: String,
+   content: String,
+   created_at: {type: Date, default: Date.now},
    author: {
       id:{
       type: mongoose.Schema.Types.ObjectId,
@@ -20,4 +21,4 @@ var campgroundSchema = new mongoose.Schema({
    ]
 });
 
-module.exports = mongoose.model("Campground", campgroundSchema);
+module.exports = mongoose.model("Blog", blogSchema);

@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>YelpCamp</title>
+    <title>CommonPost</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 </head>
 <body>
-        
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+      
+<nav class="navbar navbar-inverse">
+    <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">YelpCamp</a>
+            <a class="navbar-brand" href="/">CommonBlogs</a>
         </div>
         <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/blogs">Blogs</a></li>
+                <li><a href="/blogs/new">Write a post</a></li>
+            </ul>
+            
             <ul class="nav navbar-nav navbar-right">
                 <% if(!currentUser){ %>
                     <li><a href="/login">Login</a></li>
@@ -34,4 +40,4 @@
         <div class="alert alert-success" role="alert"><%= success %></div>
     <% } %>    
 </div>
-       
+
