@@ -9,16 +9,12 @@ var methodOverride = require("method-override");
 var Blog = require("./models/blog.js");
 var Comment = require("./models/comment.js");
 var User = require("./models/user.js");
-var seedDB = require("./seeds");
 
 var commentRoutes = require("./routes/comments.js");
 var blogRoutes = require("./routes/blogs.js");
 var indexRoutes = require("./routes/index.js");
 
-mongoose.connect("mongodb://vaidotas75:online@ds157185.mlab.com:57185/commonblog");
-// seedDB();
-// mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://vai01:online@ds237445.mlab.com:37445/commonBlogs");
+mongoose.connect(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
